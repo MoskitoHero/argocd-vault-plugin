@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"regexp"
 
+	"encoding/base64"
 	"github.com/IBM/argocd-vault-plugin/pkg/types"
 	"github.com/googleapis/gax-go/v2"
 	secretmanagerpb "google.golang.org/genproto/googleapis/cloud/secretmanager/v1"
@@ -59,7 +60,7 @@ func (a *GCPSecretManager) GetSecrets(path string, version string, annotations m
 
 	secretName := matches[GCPPath.SubexpIndex("secretid")]
 	secretData := result.Payload.Data
-	data[secretName] = string(secretData)
+	data[secretName] =  base64.StdEncoding.DecodeString(string(secretData))
 
 	return data, nil
 }
