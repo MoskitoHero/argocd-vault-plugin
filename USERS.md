@@ -5,3 +5,4 @@ Currently, the following organizations are **officially** using argocd-vault-plu
 1. [Everly Health](https://www.everlyhealth.com/)
 2. [IBM](https://www.ibm.com/)
 3. [Orange](https://www.orange.com)
+4. [Domalys](https://www.domalys.com)
